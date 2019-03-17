@@ -655,7 +655,7 @@ void menuSwitchBands(int btn){
       if (i != 0)
         resetTimer();
 
-      if (select + i < 100)
+      if (select + i < 120)
         select += i;
 
       if (i < 0 && select - i >= 0)
@@ -664,7 +664,7 @@ void menuSwitchBands(int btn){
       // https://en.wikipedia.org/wiki/List_of_amateur_radio_frequency_bands_in_India
       if (select < 10) {
         if (!btnState) {
-          printLine2("7 MHz (40m)   ");
+          printLine2("7 MHz (40m)       ");
         } else {
           frequency = 7000000;
           takeReading(frequency);
@@ -673,7 +673,7 @@ void menuSwitchBands(int btn){
         }
       } else if (select < 20) {
         if (!btnState) {
-          printLine2("14 MHz (20m)  ");
+          printLine2("14 MHz (20m)      ");
         } else {
           frequency = 14000000;
           takeReading(frequency);
@@ -682,7 +682,7 @@ void menuSwitchBands(int btn){
         }
       } else if (select < 30) {
         if (!btnState) {
-          printLine2("18 MHz (17m)  ");
+          printLine2("18 MHz (17m)      ");
         } else {
           frequency = 18000000;
           takeReading(frequency);
@@ -691,7 +691,7 @@ void menuSwitchBands(int btn){
         }
       } else if (select < 40) {
         if (!btnState) {
-          printLine2("21 MHz (15m)  ");
+          printLine2("21 MHz (15m)      ");
         } else {
           frequency = 21000000;
           takeReading(frequency);
@@ -700,7 +700,7 @@ void menuSwitchBands(int btn){
         }
       } else if (select < 50) {
         if (!btnState) {
-          printLine2("24 MHz (12m)  ");
+          printLine2("24 MHz (12m)      ");
         } else {
           frequency = 24000000;
           takeReading(frequency);
@@ -709,7 +709,7 @@ void menuSwitchBands(int btn){
         }
       } else if (select < 60) {
         if (!btnState) {
-          printLine2("28 MHz (10m)  ");
+          printLine2("28 MHz (10m)      ");
         } else {
           frequency = 28000000;
           takeReading(frequency);
@@ -718,7 +718,7 @@ void menuSwitchBands(int btn){
         }
       } else if (select < 70) {
         if (!btnState) {
-          printLine2("50 MHz (6m)   ");
+          printLine2("50 MHz (6m)       ");
         } else {
           frequency = 50000000;
           takeReading(frequency);
@@ -727,16 +727,34 @@ void menuSwitchBands(int btn){
         }
       } else if (select < 80) {
         if (!btnState) {
-          printLine2("144 MHz (VHF) ");
+          printLine2("118 MHz (air)     ");
         } else {
-          frequency = 144000000;
+          frequency = 118000000;
           takeReading(frequency);
           updateDisplay();
           menuOn = 0;
         }
       } else if (select < 90) {
         if (!btnState) {
-          printLine2("434 MHz (UHF) ");
+          printLine2("144 MHz (VHF 2m)  ");
+        } else {
+          frequency = 144000000;
+          takeReading(frequency);
+          updateDisplay();
+          menuOn = 0;
+        }
+      } else if (select < 100) {
+        if (!btnState) {
+          printLine2("350 MHz (easy)    ");
+        } else {
+          frequency = 350000000;
+          takeReading(frequency);
+          updateDisplay();
+          menuOn = 0;
+        }
+      } else if (select < 110) {
+        if (!btnState) {
+          printLine2("434 MHz (70cm)    ");
         } else {
           frequency = 434000000;
           takeReading(frequency);
